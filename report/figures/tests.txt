@@ -1,0 +1,40 @@
+$ python3 -m unittest discover -s tests -v
+test_framework.TestEdgeCases.test_empty ... ok
+test_framework.TestEdgeCases.test_self_attack ... ok
+test_framework.TestEdgeCases.test_unknown_argument ... ok
+test_framework.TestExercises.test_exercise_1 ... ok
+test_framework.TestExercises.test_exercise_2_odd_cycle ... ok
+test_framework.TestFigure51.test_admissible_example_5_5 ... ok
+test_framework.TestFigure51.test_characteristic ... ok
+test_framework.TestFigure51.test_complete_example_5_6 ... ok
+test_framework.TestFigure51.test_conflict_free ... ok
+test_framework.TestFigure51.test_defence ... ok
+test_framework.TestFigure51.test_grounded_trace ... ok
+test_framework.TestFigure51.test_preferred_example_5_8 ... ok
+test_framework.TestFigure52.test_acceptance ... ok
+test_framework.TestFigure52.test_complete_example_5_7 ... ok
+test_framework.TestFigure52.test_grounded ... ok
+test_framework.TestFigure52.test_preferred_example_5_8 ... ok
+test_framework.TestFigure52.test_three_labellings ... ok
+test_framework.TestFigure53.test_grounded ... ok
+test_framework.TestRandomProperties.test_properties ... ok
+test_strategic.TestExample510.test_best_response_x ... ok
+test_strategic.TestExample510.test_condition_fails ... ok
+test_strategic.TestExample510.test_not_strategyproof ... ok
+test_strategic.TestExample510.test_truthful_outcome ... ok
+test_strategic.TestExample510.test_x_hides_a1 ... ok
+test_strategic.TestExample510.test_y_and_z_truthful_weakly_dominant ... ok
+test_strategic.TestExample511.test_a6_not_a5_cancels_self_defeat ... ok
+test_strategic.TestExample511.test_strategyproof_although_condition_fails ... ok
+test_strategic.TestExample511.test_truthful_outcome ... ok
+test_strategic.TestPathConditions.test_cycle_terminates_and_parity ... ok
+test_strategic.TestPathConditions.test_even_cycle ... ok
+test_strategic.TestPathConditions.test_odd_walk_witness ... ok
+test_strategic.TestPathConditions.test_self_attack_counts ... ok
+test_strategic.TestPathConditions.test_walk_vs_simple ... ok
+test_strategic.TestTheoremsOnRandomInstances.test_bitmask_grounded_matches_engine ... ok
+Every instance satisfying the condition must be strategyproof (Thm 5.4). ... ok
+----------------------------------------------------------------------
+Ran 35 tests in 0.100s
+
+OK

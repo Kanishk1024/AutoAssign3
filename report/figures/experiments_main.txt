@@ -1,0 +1,22 @@
+$ python3 experiments.py
+Q1 -- fraction of instances that are strategyproof
+     p      N     SP  frac SP  cond(walk)  cond(simple)
+  0.15   1000    553    0.553       0.038         0.038
+  0.25   1000    256    0.256       0.002         0.002
+  0.35   1000    129    0.129       0.000         0.000
+
+Contingency (Thm 5.4 condition [walk] x strategyproof)
+     p  cond&SP  cond&!SP  !cond&SP  !cond&!SP
+  0.15       38         0       515        447
+  0.25        2         0       254        744
+  0.35        0         0       129        871
+
+Q2 -- condition holds but NOT strategyproof: walk reading = 0, simple-path reading = 0
+Q3 -- strategyproof although condition fails: 898
+       compensated/source-itself-lost 480
+       hiding-never-helps   225
+       compensated/other-own-argument-lost 78
+       victim-never-in      63
+       self-defeat-only     52
+
+(total 3000 instances, 0.6s)

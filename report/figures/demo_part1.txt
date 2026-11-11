@@ -1,0 +1,47 @@
+$ python3 demo.py --part 1
+
+==============================================================================
+PART 1 -- ARGUMENTATION ENGINE
+==============================================================================
+
+==============================================================================
+Figure 5.1 (Examples 5.5, 5.6, 5.8):  ArgumentationFramework(A={a1, a2, a3, a4, a5}, attacks=[a2->a1, a3->a2, a4->a1, a5->a4])
+==============================================================================
+
+--- Item 2/3/4/5: conflict-free, defence, characteristic function, admissible, complete ---
+  S={}                 conflict-free=True  F(S)={a3, a5}           admissible=True  complete=False
+  S={a3}               conflict-free=True  F(S)={a3, a5}           admissible=True  complete=False
+  S={a5}               conflict-free=True  F(S)={a3, a5}           admissible=True  complete=False
+  S={a3, a5}           conflict-free=True  F(S)={a1, a3, a5}       admissible=True  complete=False
+  S={a1, a3, a5}       conflict-free=True  F(S)={a1, a3, a5}       admissible=True  complete=True
+    does {a1, a3, a5} defend a1?  True
+    does {a1, a3, a5} defend a2?  False
+    does {a1, a3, a5} defend a3?  True
+    does {a1, a3, a5} defend a4?  False
+    does {a1, a3, a5} defend a5?  True
+
+--- Item 6A: grounded extension (iterating F from the empty set) ---
+  F^1(∅) = {a3, a5}
+  F^2(∅) = {a1, a3, a5}
+  F^3(∅) = {a1, a3, a5}
+  grounded extension = {a1, a3, a5}
+
+--- Item 6B/6C: complete, preferred, stable, semi-stable extensions ---
+  grounded     {a1, a3, a5}
+  complete     {a1, a3, a5}
+  preferred    {a1, a3, a5}
+  stable       {a1, a3, a5}
+  semi-stable  {a1, a3, a5}
+
+--- Item 6D: all legal labellings ---
+  L1: in={a1, a3, a5}  out={a2, a4}  undec={}
+
+--- Item 6E: acceptance status of every argument ---
+  arg  grounded              complete              preferred             stable                semi-stable           
+  a1   skeptically accepted  skeptically accepted  skeptically accepted  skeptically accepted  skeptically accepted  
+  a2   rejected              rejected              rejected              rejected              rejected              
+  a3   skeptically accepted  skeptically accepted  skeptically accepted  skeptically accepted  skeptically accepted  
+  a4   rejected              rejected              rejected              rejected              rejected              
+  a5   skeptically accepted  skeptically accepted  skeptically accepted  skeptically accepted  skeptically accepted  
+
+  Book: admissible = ∅,{α3},{α5},{α3,α5},{α1,α3,α5}; only complete ext. {α1,α3,α5}  ✔

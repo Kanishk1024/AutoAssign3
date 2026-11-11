@@ -1,0 +1,159 @@
+{
+  "config": {
+    "instances_per_p": 1000,
+    "seed": 42,
+    "self_attacks": true,
+    "agents": 3,
+    "n_args": [
+      6,
+      7,
+      8
+    ],
+    "p_values": [
+      0.15,
+      0.25,
+      0.35
+    ]
+  },
+  "per_p": {
+    "0.15": {
+      "instances": 1000,
+      "strategyproof": 553,
+      "frac_strategyproof": 0.553,
+      "cond_walk": 38,
+      "frac_cond_walk": 0.038,
+      "cond_simple": 38,
+      "frac_cond_simple": 0.038,
+      "cond_and_sp": 38,
+      "cond_not_sp": 0,
+      "notcond_sp": 515,
+      "notcond_not_sp": 447,
+      "q2_walk_count": 0,
+      "q2_simple_count": 0,
+      "q3_count": 515,
+      "q3_categories": {
+        "hiding-never-helps": 76,
+        "compensated/source-itself-lost": 317,
+        "self-defeat-only": 43,
+        "victim-never-in": 32,
+        "compensated/other-own-argument-lost": 47
+      },
+      "mean_attacks": 7.4
+    },
+    "0.25": {
+      "instances": 1000,
+      "strategyproof": 256,
+      "frac_strategyproof": 0.256,
+      "cond_walk": 2,
+      "frac_cond_walk": 0.002,
+      "cond_simple": 2,
+      "frac_cond_simple": 0.002,
+      "cond_and_sp": 2,
+      "cond_not_sp": 0,
+      "notcond_sp": 254,
+      "notcond_not_sp": 744,
+      "q2_walk_count": 0,
+      "q2_simple_count": 0,
+      "q3_count": 254,
+      "q3_categories": {
+        "compensated/source-itself-lost": 122,
+        "hiding-never-helps": 77,
+        "compensated/other-own-argument-lost": 26,
+        "self-defeat-only": 8,
+        "victim-never-in": 21
+      },
+      "mean_attacks": 12.39
+    },
+    "0.35": {
+      "instances": 1000,
+      "strategyproof": 129,
+      "frac_strategyproof": 0.129,
+      "cond_walk": 0,
+      "frac_cond_walk": 0.0,
+      "cond_simple": 0,
+      "frac_cond_simple": 0.0,
+      "cond_and_sp": 0,
+      "cond_not_sp": 0,
+      "notcond_sp": 129,
+      "notcond_not_sp": 871,
+      "q2_walk_count": 0,
+      "q2_simple_count": 0,
+      "q3_count": 129,
+      "q3_categories": {
+        "hiding-never-helps": 72,
+        "compensated/source-itself-lost": 41,
+        "victim-never-in": 10,
+        "compensated/other-own-argument-lost": 5,
+        "self-defeat-only": 1
+      },
+      "mean_attacks": 17.45
+    }
+  },
+  "per_p_n": {
+    "0.15": {
+      "6": {
+        "instances": 332,
+        "strategyproof": 222,
+        "frac": 0.6687
+      },
+      "7": {
+        "instances": 345,
+        "strategyproof": 197,
+        "frac": 0.571
+      },
+      "8": {
+        "instances": 323,
+        "strategyproof": 134,
+        "frac": 0.4149
+      }
+    },
+    "0.25": {
+      "6": {
+        "instances": 356,
+        "strategyproof": 120,
+        "frac": 0.3371
+      },
+      "7": {
+        "instances": 334,
+        "strategyproof": 93,
+        "frac": 0.2784
+      },
+      "8": {
+        "instances": 310,
+        "strategyproof": 43,
+        "frac": 0.1387
+      }
+    },
+    "0.35": {
+      "6": {
+        "instances": 335,
+        "strategyproof": 70,
+        "frac": 0.209
+      },
+      "7": {
+        "instances": 325,
+        "strategyproof": 38,
+        "frac": 0.1169
+      },
+      "8": {
+        "instances": 340,
+        "strategyproof": 21,
+        "frac": 0.0618
+      }
+    }
+  },
+  "total": {
+    "instances": 3000,
+    "q2_walk_count": 0,
+    "q2_simple_count": 0,
+    "q3_count": 898,
+    "q3_categories": {
+      "hiding-never-helps": 225,
+      "compensated/source-itself-lost": 480,
+      "self-defeat-only": 52,
+      "victim-never-in": 63,
+      "compensated/other-own-argument-lost": 78
+    },
+    "runtime_sec": 0.6
+  }
+}

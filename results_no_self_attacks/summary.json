@@ -1,0 +1,154 @@
+{
+  "config": {
+    "instances_per_p": 1000,
+    "seed": 42,
+    "self_attacks": false,
+    "agents": 3,
+    "n_args": [
+      6,
+      7,
+      8
+    ],
+    "p_values": [
+      0.15,
+      0.25,
+      0.35
+    ]
+  },
+  "per_p": {
+    "0.15": {
+      "instances": 1000,
+      "strategyproof": 603,
+      "frac_strategyproof": 0.603,
+      "cond_walk": 133,
+      "frac_cond_walk": 0.133,
+      "cond_simple": 133,
+      "frac_cond_simple": 0.133,
+      "cond_and_sp": 133,
+      "cond_not_sp": 0,
+      "notcond_sp": 470,
+      "notcond_not_sp": 397,
+      "q2_walk_count": 0,
+      "q2_simple_count": 0,
+      "q3_count": 470,
+      "q3_categories": {
+        "compensated/other-own-argument-lost": 68,
+        "compensated/source-itself-lost": 365,
+        "hiding-never-helps": 35,
+        "self-defeat-only": 2
+      },
+      "mean_attacks": 6.31
+    },
+    "0.25": {
+      "instances": 1000,
+      "strategyproof": 309,
+      "frac_strategyproof": 0.309,
+      "cond_walk": 19,
+      "frac_cond_walk": 0.019,
+      "cond_simple": 19,
+      "frac_cond_simple": 0.019,
+      "cond_and_sp": 19,
+      "cond_not_sp": 0,
+      "notcond_sp": 290,
+      "notcond_not_sp": 691,
+      "q2_walk_count": 0,
+      "q2_simple_count": 0,
+      "q3_count": 290,
+      "q3_categories": {
+        "compensated/source-itself-lost": 199,
+        "hiding-never-helps": 37,
+        "compensated/other-own-argument-lost": 53,
+        "self-defeat-only": 1
+      },
+      "mean_attacks": 10.57
+    },
+    "0.35": {
+      "instances": 1000,
+      "strategyproof": 119,
+      "frac_strategyproof": 0.119,
+      "cond_walk": 2,
+      "frac_cond_walk": 0.002,
+      "cond_simple": 2,
+      "frac_cond_simple": 0.002,
+      "cond_and_sp": 2,
+      "cond_not_sp": 0,
+      "notcond_sp": 117,
+      "notcond_not_sp": 881,
+      "q2_walk_count": 0,
+      "q2_simple_count": 0,
+      "q3_count": 117,
+      "q3_categories": {
+        "hiding-never-helps": 11,
+        "compensated/source-itself-lost": 81,
+        "compensated/other-own-argument-lost": 25
+      },
+      "mean_attacks": 14.8
+    }
+  },
+  "per_p_n": {
+    "0.15": {
+      "6": {
+        "instances": 348,
+        "strategyproof": 247,
+        "frac": 0.7098
+      },
+      "7": {
+        "instances": 317,
+        "strategyproof": 204,
+        "frac": 0.6435
+      },
+      "8": {
+        "instances": 335,
+        "strategyproof": 152,
+        "frac": 0.4537
+      }
+    },
+    "0.25": {
+      "6": {
+        "instances": 361,
+        "strategyproof": 163,
+        "frac": 0.4515
+      },
+      "7": {
+        "instances": 299,
+        "strategyproof": 90,
+        "frac": 0.301
+      },
+      "8": {
+        "instances": 340,
+        "strategyproof": 56,
+        "frac": 0.1647
+      }
+    },
+    "0.35": {
+      "6": {
+        "instances": 342,
+        "strategyproof": 76,
+        "frac": 0.2222
+      },
+      "7": {
+        "instances": 337,
+        "strategyproof": 33,
+        "frac": 0.0979
+      },
+      "8": {
+        "instances": 321,
+        "strategyproof": 10,
+        "frac": 0.0312
+      }
+    }
+  },
+  "total": {
+    "instances": 3000,
+    "q2_walk_count": 0,
+    "q2_simple_count": 0,
+    "q3_count": 877,
+    "q3_categories": {
+      "compensated/other-own-argument-lost": 146,
+      "compensated/source-itself-lost": 645,
+      "hiding-never-helps": 83,
+      "self-defeat-only": 3
+    },
+    "runtime_sec": 0.5
+  }
+}

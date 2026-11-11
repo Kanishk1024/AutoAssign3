@@ -1,0 +1,15 @@
+# Assignment 3: Argumentation Engine and Strategic Argumentation
+#
+# The core code (argumentation/, tests/, demo.py, web_demo.py, experiments.py)
+# uses ONLY the Python standard library and runs with plain `python3` (>= 3.8).
+#
+# The packages below are OPTIONAL. They are needed only for:
+#   * the plots that experiments.py saves into results*/plots/ (matplotlib)
+#   * building REPORT.pdf with report/build_report.py         (markdown, weasyprint)
+#
+# Install them into a virtual environment:
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r requirements.txt
+matplotlib>=3.8
+markdown>=3.5
+weasyprint>=60

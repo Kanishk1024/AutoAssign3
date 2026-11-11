@@ -1,0 +1,41 @@
+$ python3 demo.py --part 2
+
+==============================================================================
+PART 2 -- STRATEGIC ARGUMENTATION (grounded direct mechanism)
+==============================================================================
+
+--- Example 5.10 / Figure 5.4:  R = a1->a2, a2->a3, a3->a4, a3->a5 ---
+  types: A_x={a1, a4, a5}; A_y={a2}; A_z={a3}
+  truthful                   reports [x:{a1, a4, a5}; y:{a2}; z:{a3}] -> outcome {a1, a3}   (u_x=1, u_y=0, u_z=1)
+  (Book misprint: it writes u_y(o,{α3})=1, u_z(o,{α2})=0 -- the sets are swapped;
+   correctly u_y(o,{α2})=0 and u_z(o,{α3})=1, as printed above.)
+  x hides a1                 reports [x:{a4, a5}; y:{a2}; z:{a3}] -> outcome {a2, a4, a5}   (u_x=2, u_y=1, u_z=0)
+
+--- Item 2: best response of x when y, z are truthful ---
+    reveal {}               outcome {a2}               u_x=0
+    reveal {a1}             outcome {a1, a3}           u_x=1
+    reveal {a4}             outcome {a2, a4}           u_x=1
+    reveal {a5}             outcome {a2, a5}           u_x=1
+    reveal {a1, a4}         outcome {a1, a3}           u_x=1
+    reveal {a1, a5}         outcome {a1, a3}           u_x=1
+    reveal {a4, a5}         outcome {a2, a4, a5}       u_x=2  <- best
+    reveal {a1, a4, a5}     outcome {a1, a3}           u_x=1
+  truthful utility 1, best 2 -> truthful is best? False
+
+--- Item 3: Theorem 5.3 (exhaustive) strategyproofness check ---
+  strategyproof: False
+  witness: agent x, others reveal {a2, a3}: hiding {a1} raises utility 1 -> 2
+
+--- Item 4: Theorem 5.4 condition (odd-length path between an agent's own arguments) ---
+  condition holds: False;  violations: x: a1~>a4, x: a1~>a5
+
+--- Example 5.11 / Figure 5.5: add a6 -> a3, give a6 to x ---
+  types: A_x={a1, a4, a5, a6}; A_y={a2}; A_z={a3}
+  truthful                   reports [x:{a1, a4, a5, a6}; y:{a2}; z:{a3}] -> outcome {a1, a4, a5, a6}   (u_x=4, u_y=0, u_z=0)
+  strategyproof (Thm 5.3): True
+  Thm 5.4 condition holds: False  (violations a1~>a4, a1~>a5)
+  => the condition is sufficient but NOT necessary.
+  Which argument cancels the indirect self-defeat? (book says α5 -- misprint)
+    x without a5: strategyproof = True
+    x without a6: strategyproof = False
+  -> removing a6 restores the manipulation, so it is α6 that cancels it.

@@ -1,0 +1,177 @@
+[
+  {
+    "category": "compensated/source-itself-lost",
+    "label": "Hiding gains nothing on balance (hidden argument itself lost)",
+    "id": "p0.15-0645",
+    "figure": "q3_compensated_source-itself-lost.png",
+    "types": {
+      "A": [
+        "a1",
+        "a2",
+        "a4",
+        "a5"
+      ],
+      "B": [],
+      "C": [
+        "a3",
+        "a6"
+      ]
+    },
+    "attacks": [
+      "a1->a2"
+    ],
+    "agent": "A",
+    "source": "a1",
+    "target": "a2",
+    "u_truth": 3,
+    "u_hide": 3,
+    "violations": [
+      "A: a1~>a2"
+    ],
+    "truthful_outcome": "{a1, a3, a4, a5, a6}",
+    "detail": "agent A hiding a1 (others reveal {a3, a6}) frees {a2} but loses {a1}"
+  },
+  {
+    "category": "compensated/other-own-argument-lost",
+    "label": "Hiding loses other own arguments (\u03b16 effect)",
+    "id": "p0.15-0076",
+    "figure": "q3_compensated_other-own-argument-lost.png",
+    "types": {
+      "A": [],
+      "B": [
+        "a1",
+        "a2",
+        "a4",
+        "a6"
+      ],
+      "C": [
+        "a3",
+        "a5"
+      ]
+    },
+    "attacks": [
+      "a1->a4",
+      "a4->a6",
+      "a6->a5"
+    ],
+    "agent": "B",
+    "source": "a1",
+    "target": "a4",
+    "u_truth": 3,
+    "u_hide": 2,
+    "violations": [
+      "B: a1~>a4",
+      "B: a4~>a6"
+    ],
+    "truthful_outcome": "{a1, a2, a3, a6}",
+    "detail": "agent B hiding a1 (others reveal {a3, a5}) frees {a4} but loses {a1, a6}"
+  },
+  {
+    "category": "hiding-never-helps",
+    "label": "Hiding never frees the target",
+    "id": "p0.15-0069",
+    "figure": "q3_hiding-never-helps.png",
+    "types": {
+      "A": [
+        "a1",
+        "a4",
+        "a5",
+        "a6"
+      ],
+      "B": [
+        "a3"
+      ],
+      "C": [
+        "a2"
+      ]
+    },
+    "attacks": [
+      "a4->a4",
+      "a4->a6",
+      "a5->a6"
+    ],
+    "agent": "A",
+    "source": "a4",
+    "target": "a6",
+    "u_truth": 2,
+    "u_hide": 2,
+    "violations": [
+      "A: a4~>a4",
+      "A: a4~>a6",
+      "A: a5~>a6"
+    ],
+    "truthful_outcome": "{a1, a2, a3, a5}",
+    "detail": "hiding a source from the truthful report never reinstates any of its victims (the victim stays out/undec because of another attacker, e.g. an unattacked or self-attacking argument)"
+  },
+  {
+    "category": "victim-never-in",
+    "label": "Target never accepted",
+    "id": "p0.15-0548",
+    "figure": "q3_victim-never-in.png",
+    "types": {
+      "A": [
+        "a2",
+        "a6"
+      ],
+      "B": [
+        "a1",
+        "a4",
+        "a5"
+      ],
+      "C": [
+        "a3"
+      ]
+    },
+    "attacks": [
+      "a4->a4",
+      "a5->a4",
+      "a6->a4"
+    ],
+    "agent": "B",
+    "source": "a5",
+    "target": "a4",
+    "u_truth": 2,
+    "u_hide": 1,
+    "violations": [
+      "B: a4~>a4",
+      "B: a5~>a4"
+    ],
+    "truthful_outcome": "{a1, a2, a3, a5, a6}",
+    "detail": "victims {a4} are never accepted in any profile"
+  },
+  {
+    "category": "self-defeat-only",
+    "label": "Only self-attacking arguments",
+    "id": "p0.15-0050",
+    "figure": "q3_self-defeat-only.png",
+    "types": {
+      "A": [
+        "a2",
+        "a3",
+        "a6"
+      ],
+      "B": [
+        "a5"
+      ],
+      "C": [
+        "a1",
+        "a4"
+      ]
+    },
+    "attacks": [
+      "a5->a4",
+      "a6->a5",
+      "a6->a6"
+    ],
+    "agent": "A",
+    "source": "a6",
+    "target": "a6",
+    "u_truth": 2,
+    "u_hide": 2,
+    "violations": [
+      "A: a6~>a6"
+    ],
+    "truthful_outcome": "{a1, a2, a3}",
+    "detail": "violations are self-defeating arguments only: a6"
+  }
+]

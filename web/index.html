@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Argumentation Live Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>Argumentation Engine</h1>
+    <span class="sub">Assignment 3 · live demo · every result computed by the Python package</span>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="engine" role="tab">1 · Engine</button>
+    <button class="tab" data-tab="strategic" role="tab">2 · Strategic</button>
+    <button class="tab" data-tab="experiments" role="tab">3 · Experiments</button>
+  </nav>
+</header>
+
+<div id="toast" class="toast" hidden></div>
+
+<!-- ============================ TAB 1 ============================ -->
+<main id="tab-engine" class="tabpane active">
+  <section class="stage">
+    <div class="toolbar">
+      <label>Example
+        <select id="eng-example"></select>
+      </label>
+      <div class="seg" id="eng-mode">
+        <button data-mode="select" class="on" title="Click arguments to build a set S">Select S</button>
+        <button data-mode="edit" title="Click empty space: add argument · click A then B: toggle attack A→B · double-click: delete">Edit graph</button>
+      </div>
+      <button id="eng-clearS" class="ghost">Clear S</button>
+    </div>
+    <div class="svgwrap"><svg id="eng-svg" aria-label="argument graph"></svg></div>
+    <div class="legend">
+      <span><i class="dot in"></i>in</span><span><i class="dot out"></i>out</span>
+      <span><i class="dot undec"></i>undec</span><span><i class="dot sel"></i>in S</span>
+      <span><i class="dot fs"></i>in F(S)</span>
+      <span class="hint" id="eng-hint">Click arguments to build S.</span>
+    </div>
+  </section>
+
+  <aside class="panel">
+    <div class="card">
+      <h3>Set S <small>items 2–5</small></h3>
+      <div id="eng-S" class="kv"></div>
+    </div>
+
+    <div class="card">
+      <h3>Grounded extension <small>item 6A · F iterated from ∅</small></h3>
+      <div class="player">
+        <button id="g-reset" title="reset">⟲</button>
+        <button id="g-step" title="one step">Step ▸</button>
+        <button id="g-play" class="primary">▶ Play</button>
+        <span id="g-info" class="mono"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Extensions <small>items 6B, 6C · click to show</small></h3>
+      <div id="eng-ext"></div>
+    </div>
+
+    <div class="card">
+      <h3>Legal labellings <small>item 6D</small></h3>
+      <div class="player">
+        <button id="l-prev">◀</button>
+        <span id="l-info" class="mono"></span>
+        <button id="l-next">▶</button>
+        <button id="l-cycle" class="ghost">Auto-cycle</button>
+      </div>
+      <div id="l-text" class="mono small"></div>
+    </div>
+
+    <div class="card">
+      <h3>Acceptance status <small>item 6E · hover a row</small></h3>
+      <div id="eng-status" class="tablewrap"></div>
+    </div>
+  </aside>
+</main>
+
+<!-- ============================ TAB 2 ============================ -->
+<main id="tab-strategic" class="tabpane">
+  <section class="stage">
+    <div class="toolbar">
+      <label>Instance
+        <select id="st-example"></select>
+      </label>
+      <label>p <select id="st-p"><option>0.15</option><option selected>0.25</option><option>0.35</option></select></label>
+      <label class="chk"><input type="checkbox" id="st-self" checked> self-attacks</label>
+      <button id="st-random">🎲 Random</button>
+      <button id="st-truth" class="ghost">Everyone truthful</button>
+    </div>
+    <div class="svgwrap"><svg id="st-svg" aria-label="mechanism graph"></svg></div>
+    <div class="legend">
+      <span><i class="dot in"></i>accepted</span><span><i class="dot out"></i>out</span>
+      <span><i class="dot undec"></i>undec</span><span><i class="dot ghost"></i>hidden</span>
+      <span id="st-agentlegend"></span>
+      <span class="hint">Untick an argument to hide it from the mechanism.</span>
+    </div>
+  </section>
+
+  <aside class="panel">
+    <div class="card">
+      <h3>Mechanism outcome <small>Part 2 · item 1</small></h3>
+      <div id="st-outcome" class="mono"></div>
+    </div>
+    <div class="card">
+      <h3>Agents' reports <small>tick = reveal · ✕ = remove from type</small></h3>
+      <div id="st-agents"></div>
+    </div>
+    <div class="card">
+      <h3>Best response <small>item 2</small></h3>
+      <div id="st-br"><p class="muted">Click “Best response” on an agent.</p></div>
+    </div>
+    <div class="card">
+      <h3>Strategyproof? <small>items 3, 4</small></h3>
+      <div class="row">
+        <button id="st-check" class="primary">Check Theorems 5.3 &amp; 5.4</button>
+        <button id="st-manip" disabled>▶ Show manipulation</button>
+      </div>
+      <div id="st-verdict"></div>
+    </div>
+  </aside>
+</main>
+
+<!-- ============================ TAB 3 ============================ -->
+<main id="tab-experiments" class="tabpane">
+  <section class="wide">
+    <p class="muted" id="exp-config"></p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Q1 · Fraction of instances that are strategyproof</h3>
+        <div id="exp-chart-sp" class="chart"></div>
+      </div>
+      <div class="card">
+        <h3>Fraction satisfying the Theorem 5.4 condition</h3>
+        <div id="exp-chart-cond" class="chart"></div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Q2 · Condition holds but not strategyproof</h3>
+        <div id="exp-q2"></div>
+      </div>
+      <div class="card">
+        <h3>Q3 · Strategyproof although condition fails</h3>
+        <div id="exp-q3"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Contingency: condition × strategyproof</h3>
+      <div id="exp-cont" class="tablewrap"></div>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
